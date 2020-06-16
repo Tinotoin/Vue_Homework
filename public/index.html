@@ -12,7 +12,14 @@
 <body>
 
   <div id="app">
-
+    <form v-on:submit.prevent="saveNewItem">
+      <label for="new-item">Add a new task:</label>
+      <input type="text" id="new-item" v-model="newItem" required>
+      <input type="submit" value="Save New Item">
+      <input type="radio" name="priority" value="high">
+    <label for="male">High</label>
+    <input type="radio" name="priority" value="low">
+    <label for="female">Low</label>
 
     <ul>
       <li v-for="(item, index) in items" v-bind:class="item.isDone ? 'done' : 'not-done'">
@@ -22,14 +29,7 @@
       </li>
     </ul>
 
-    <form v-on:submit.prevent="saveNewItem">
-      <label for="new-item">Add a new task:</label>
-      <input type="text" id="new-item" v-model="newItem" required>
-      <input type="submit" value="Save New Item">
-      <input type="radio" name="priority" value="high">
-    <label for="male">High</label>
-    <input type="radio" name="priority" value="low">
-    <label for="female">Low</label>
+
 
     </form>
 
